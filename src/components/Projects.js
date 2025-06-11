@@ -1,0 +1,189 @@
+import React from "react";
+
+const Projects = () => {
+  const projects = [
+    {
+      id: 1,
+      title: "Blockchain Based E-Commerce Platform",
+      description:
+        "A decentralized eCommerce platform built using React, Node.js, MongoDB, and Solidity. It integrates MetaMask for secure Web3 authentication and features smart contract-based transactions, product listing, and order management—all powered by blockchain for enhanced transparency and trust",
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Tailwind CSS",
+        "Solidity",
+        "Ethereum",
+        "Web3.js",
+        "MetaMask",
+      ],
+      githubLink: "https://github.com/Abuzarsheik/Blockchain-Ecommerc",
+      liveLink: "https://github.com/Abuzarsheik/Blockchain-Ecommerce",
+      image: "bg-gradient-to-br from-blue-400 to-purple-500",
+    },
+    {
+      id: 2,
+      title: "Blog Platform",
+      description:
+        "A full-stack blogging platform with user authentication, post creation, and commenting system. Built with MERN stack and JWT authentication.",
+      technologies: ["React", "Node.js", "MongoDB", "JWT"],
+      githubLink: "https://github.com/Abuzarsheik/Blogs",
+      image: "bg-gradient-to-br from-purple-400 to-pink-500",
+    },
+    {
+      id: 3,
+      title: "Weather Forecast App",
+      description:
+        "A responsive weather application that provides detailed forecasts using OpenWeather API. Features location-based weather and 7-day forecasts.",
+      technologies: ["React", "Weather API", "CSS3", "Responsive Design"],
+      githubLink: "https://github.com/yourusername/weather-app",
+      liveLink: "https://weather-forecast-demo.vercel.app",
+      image: "bg-gradient-to-br from-yellow-400 to-orange-500",
+    },
+    {
+      id: 4,
+      title: "Task Management App",
+      description:
+        "A collaborative task management application with real-time updates. Built with React, Express.js, and Socket.io for seamless team collaboration.",
+      technologies: ["React", "Express.js", "Socket.io", "CSS3"],
+      githubLink: "https://github.com/yourusername/task-manager",
+      liveLink: "https://task-manager-demo.vercel.app",
+      image: "bg-gradient-to-br from-green-400 to-blue-500",
+    },
+    {
+      id: 5,
+      title: "Real Estate Website",
+      description:
+        "A modern real estate website with property listings, search functionality, and contact forms. Features responsive design and smooth animations.",
+      technologies: ["React", "Tailwind CSS", "Framer Motion", "APIs"],
+      githubLink: "https://github.com/yourusername/real-estate",
+      liveLink: "https://real-estate-demo.vercel.app",
+      image: "bg-gradient-to-br from-teal-400 to-blue-500",
+    },
+    {
+      id: 6,
+      title: "Fitness Tracker",
+      description:
+        "A personal fitness tracking application with workout logging, progress charts, and goal setting. Built with React and Chart.js for data visualization.",
+      technologies: ["React", "Chart.js", "Local Storage", "CSS3"],
+      githubLink: "https://github.com/yourusername/fitness-tracker",
+      liveLink: "https://fitness-tracker-demo.vercel.app",
+      image: "bg-gradient-to-br from-red-400 to-yellow-500",
+    },
+  ];
+
+  const ProjectCard = ({ project }) => (
+    <div className="bg-white rounded-2xl shadow-lg border overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+      {/* Project Image/Visual */}
+      <div className={`h-48 ${project.image} relative overflow-hidden`}>
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+        <div className="absolute top-4 right-4">
+          <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+            <span className="text-xs font-medium text-gray-700">
+              Project {project.id}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Project Content */}
+      <div className="p-6 space-y-4">
+        <div className="space-y-2">
+          <h3 className="text-xl font-bold text-secondary group-hover:text-primary transition-colors duration-200">
+            {project.title}
+          </h3>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            {project.description}
+          </p>
+        </div>
+
+        {/* Technologies */}
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech, index) => (
+            <span
+              key={index}
+              className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex space-x-4 pt-4">
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 text-gray-600 hover:text-secondary transition-colors duration-200"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+            <span className="text-sm font-medium">GitHub</span>
+          </a>
+
+          <a
+            href={project.liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 text-primary hover:text-blue-700 transition-colors duration-200"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+            <span className="text-sm font-medium">Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <section id="projects" className="bg-white section-padding">
+      <div className="container-custom">
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary">
+            My Projects
+          </h2>
+          <div className="w-20 h-1 bg-primary rounded mx-auto"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Here are some of the projects I've worked on, showcasing my skills
+            in full-stack development
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <p className="text-gray-600 mb-6">Want to see more of my work?</p>
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            View All Projects on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
