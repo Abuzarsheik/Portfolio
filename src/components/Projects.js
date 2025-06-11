@@ -18,8 +18,9 @@ const Projects = () => {
         "MetaMask",
       ],
       githubLink: "https://github.com/Abuzarsheik/Blockchain-Ecommerc",
-      liveLink: "https://github.com/Abuzarsheik/Blockchain-Ecommerce",
-      image: "bg-gradient-to-br from-blue-400 to-purple-500",
+      liveLink: "https://blockchain-ecommerce-ruddy.vercel.app/",
+      image: "/images/projects/blockchain-ecommerce.png",
+      fallbackBg: "bg-gradient-to-br from-blue-400 to-purple-500",
     },
     {
       id: 2,
@@ -27,8 +28,10 @@ const Projects = () => {
       description:
         "A full-stack blogging platform with user authentication, post creation, and commenting system. Built with MERN stack and JWT authentication.",
       technologies: ["React", "Node.js", "MongoDB", "JWT"],
+      liveLink: "https://blogs-navy-six.vercel.app/",
       githubLink: "https://github.com/Abuzarsheik/Blogs",
-      image: "bg-gradient-to-br from-purple-400 to-pink-500",
+      image: "/images/projects/blog-platform.png",
+      fallbackBg: "bg-gradient-to-br from-purple-400 to-pink-500",
     },
     {
       id: 3,
@@ -38,7 +41,8 @@ const Projects = () => {
       technologies: ["React", "Weather API", "CSS3", "Responsive Design"],
       githubLink: "https://github.com/yourusername/weather-app",
       liveLink: "https://weather-forecast-demo.vercel.app",
-      image: "bg-gradient-to-br from-yellow-400 to-orange-500",
+      image: "/images/projects/weather-app.png",
+      fallbackBg: "bg-gradient-to-br from-yellow-400 to-orange-500",
     },
     {
       id: 4,
@@ -48,7 +52,8 @@ const Projects = () => {
       technologies: ["React", "Express.js", "Socket.io", "CSS3"],
       githubLink: "https://github.com/yourusername/task-manager",
       liveLink: "https://task-manager-demo.vercel.app",
-      image: "bg-gradient-to-br from-green-400 to-blue-500",
+      image: "/images/projects/task-manager.png",
+      fallbackBg: "bg-gradient-to-br from-green-400 to-blue-500",
     },
     {
       id: 5,
@@ -58,7 +63,8 @@ const Projects = () => {
       technologies: ["React", "Tailwind CSS", "Framer Motion", "APIs"],
       githubLink: "https://github.com/yourusername/real-estate",
       liveLink: "https://real-estate-demo.vercel.app",
-      image: "bg-gradient-to-br from-teal-400 to-blue-500",
+      image: "/images/projects/real-estate.png",
+      fallbackBg: "bg-gradient-to-br from-teal-400 to-blue-500",
     },
     {
       id: 6,
@@ -68,15 +74,33 @@ const Projects = () => {
       technologies: ["React", "Chart.js", "Local Storage", "CSS3"],
       githubLink: "https://github.com/yourusername/fitness-tracker",
       liveLink: "https://fitness-tracker-demo.vercel.app",
-      image: "bg-gradient-to-br from-red-400 to-yellow-500",
+      image: "/images/projects/fitness-tracker.png",
+      fallbackBg: "bg-gradient-to-br from-red-400 to-yellow-500",
     },
   ];
 
   const ProjectCard = ({ project }) => (
-    <div className="bg-white rounded-2xl shadow-lg border overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+    <div className="bg-white rounded-2xl shadow-lg border overflow-hidden hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
       {/* Project Image/Visual */}
-      <div className={`h-48 ${project.image} relative overflow-hidden`}>
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+      <div className="h-48 relative overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+          onError={(e) => {
+            e.target.style.display = "none";
+            e.target.nextElementSibling.style.display = "flex";
+          }}
+        />
+        <div
+          className={`${project.fallbackBg} w-full h-full absolute top-0 left-0 hidden items-center justify-center`}
+        >
+          <div className="text-white text-lg font-bold opacity-80">
+            {project.title}
+          </div>
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+        </div>
         <div className="absolute top-4 right-4">
           <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
             <span className="text-xs font-medium text-gray-700">
@@ -84,6 +108,7 @@ const Projects = () => {
             </span>
           </div>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
 
       {/* Project Content */}
@@ -99,14 +124,19 @@ const Projects = () => {
 
         {/* Technologies */}
         <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech, index) => (
+          {project.technologies.slice(0, 4).map((tech, index) => (
             <span
               key={index}
-              className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium"
+              className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-primary hover:text-white transition-colors duration-200"
             >
               {tech}
             </span>
           ))}
+          {project.technologies.length > 4 && (
+            <span className="bg-gray-100 text-gray-500 px-3 py-1 rounded-full text-xs font-medium">
+              +{project.technologies.length - 4} more
+            </span>
+          )}
         </div>
 
         {/* Action Buttons */}
@@ -123,27 +153,29 @@ const Projects = () => {
             <span className="text-sm font-medium">GitHub</span>
           </a>
 
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 text-primary hover:text-blue-700 transition-colors duration-200"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {project.liveLink && (
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 text-primary hover:text-blue-700 transition-colors duration-200"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
-            <span className="text-sm font-medium">Live Demo</span>
-          </a>
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+              <span className="text-sm font-medium">Live Demo</span>
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -173,7 +205,7 @@ const Projects = () => {
         <div className="text-center mt-16">
           <p className="text-gray-600 mb-6">Want to see more of my work?</p>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Abuzarsheik"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

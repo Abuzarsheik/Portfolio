@@ -72,7 +72,7 @@ const Hero = () => {
                       <span className="text-blue-600">developer</span> = {"{"}
                     </div>
                     <div className="text-gray-800 ml-4">
-                      name: <span className="text-green-600">'Your Name'</span>,
+                      name: <span className="text-green-600">'Muhammad Abuzar Zubair'</span>,
                     </div>
                     <div className="text-gray-800 ml-4">
                       skills:{" "}
