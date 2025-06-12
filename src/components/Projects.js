@@ -17,7 +17,7 @@ const Projects = () => {
         "Web3.js",
         "MetaMask",
       ],
-      githubLink: "https://github.com/Abuzarsheik/Blockchain-Ecommerc",
+      githubLink: "https://github.com/Abuzarsheik/Blockchain-Ecommerce",
       liveLink: "https://blockchain-ecommerce-ruddy.vercel.app/",
       image: "/images/projects/blockchain-ecommerce.png",
       fallbackBg: "bg-gradient-to-br from-blue-400 to-purple-500",
