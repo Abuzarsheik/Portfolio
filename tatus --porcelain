@@ -1,0 +1,25 @@
+warning: in the working copy of 'src/components/Projects.js', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/src/components/Projects.js b/src/components/Projects.js[m
+[1mindex 4d1a21e..9c2d725 100644[m
+[1m--- a/src/components/Projects.js[m
+[1m+++ b/src/components/Projects.js[m
+[36m@@ -58,13 +58,13 @@[m [mconst Projects = () => {[m
+     },[m
+     {[m
+       id: 4,[m
+[31m-      title: "Task Management App",[m
+[32m+[m[32m      title: "Appointment Booking System",[m
+       description:[m
+[31m-        "A collaborative task management application with real-time updates. Built with React, Express.js, and Socket.io for seamless team collaboration.",[m
+[31m-      technologies: ["React", "Express.js", "Socket.io", "CSS3"],[m
+[31m-      githubLink: "https://github.com/yourusername/task-manager",[m
+[31m-      liveLink: "https://task-manager-demo.vercel.app",[m
+[31m-      image: "/images/projects/task-manager.png",[m
+[32m+[m[32m        "A full-stack appointment booking system with role-based access and real-time scheduling, built using React, Node.js, MongoDB, and Tailwind CSS to streamline service-based bookings for clients and admins",[m
+[32m+[m[32m      technologies: ["React.js", "Node.js", "MongoDB", "Tailwind CSS", "React Router", "Axios", "JWT", "bcrypt.js", "Express.js", "Mongoose"],[m
+[32m+[m[32m      githubLink: "https://github.com/Abuzarsheik/Appointment-Booking-System",[m
+[32m+[m[32m      liveLink: "https://appointment-booking-system-git-master-abuzarsheiks-projects.vercel.app/",[m
+[32m+[m[32m      image: "/images/projects/appointment-booking-system.png",[m
+       fallbackBg: "bg-gradient-to-br from-green-400 to-blue-500",[m
+     },[m
+     {[m

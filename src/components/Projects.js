@@ -58,13 +58,13 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Task Management App",
+      title: "Appointment Booking System",
       description:
-        "A collaborative task management application with real-time updates. Built with React, Express.js, and Socket.io for seamless team collaboration.",
-      technologies: ["React", "Express.js", "Socket.io", "CSS3"],
-      githubLink: "https://github.com/yourusername/task-manager",
-      liveLink: "https://task-manager-demo.vercel.app",
-      image: "/images/projects/task-manager.png",
+        "A full-stack appointment booking system with role-based access and real-time scheduling, built using React, Node.js, MongoDB, and Tailwind CSS to streamline service-based bookings for clients and admins",
+      technologies: ["React.js", "Node.js", "MongoDB", "Tailwind CSS", "React Router", "Axios", "JWT", "bcrypt.js", "Express.js", "Mongoose"],
+      githubLink: "https://github.com/Abuzarsheik/Appointment-Booking-System",
+      liveLink: "https://appointment-booking-system-git-master-abuzarsheiks-projects.vercel.app/",
+      image: "/images/projects/appointment-booking-system.png",
       fallbackBg: "bg-gradient-to-br from-green-400 to-blue-500",
     },
     {
