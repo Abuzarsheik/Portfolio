@@ -58,7 +58,7 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Appointment Booking System",
+      title : "Appointment Booking System",
       description:
         "A full-stack appointment booking system with role-based access and real-time scheduling, built using React, Node.js, MongoDB, and Tailwind CSS to streamline service-based bookings for clients and admins",
       technologies: ["React.js", "Node.js", "MongoDB", "Tailwind CSS", "React Router", "Axios", "JWT", "bcrypt.js", "Express.js", "Mongoose"],
@@ -95,24 +95,54 @@ const Projects = () => {
     <div className="bg-white rounded-2xl shadow-lg border overflow-hidden hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
       {/* Project Image/Visual */}
       <div className="h-48 relative overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-          loading="lazy"
-          onError={(e) => {
-            e.target.style.display = "none";
-            e.target.nextElementSibling.style.display = "flex";
-          }}
-        />
-        <div
-          className={`${project.fallbackBg} w-full h-full absolute top-0 left-0 hidden items-center justify-center`}
-        >
-          <div className="text-white text-lg font-bold opacity-80">
-            {project.title}
-          </div>
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-        </div>
+        {project.liveLink ? (
+          <a
+            href={project.liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-full cursor-pointer"
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+              onError={(e) => {
+                e.target.style.display = "none";
+                e.target.nextElementSibling.style.display = "flex";
+              }}
+            />
+            <div
+              className={`${project.fallbackBg} w-full h-full absolute top-0 left-0 hidden items-center justify-center`}
+            >
+              <div className="text-white text-lg font-bold opacity-80">
+                {project.title}
+              </div>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+            </div>
+          </a>
+        ) : (
+          <>
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+              onError={(e) => {
+                e.target.style.display = "none";
+                e.target.nextElementSibling.style.display = "flex";
+              }}
+            />
+            <div
+              className={`${project.fallbackBg} w-full h-full absolute top-0 left-0 hidden items-center justify-center`}
+            >
+              <div className="text-white text-lg font-bold opacity-80">
+                {project.title}
+              </div>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+            </div>
+          </>
+        )}
         <div className="absolute top-4 right-4">
           <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
             <span className="text-xs font-medium text-gray-700">
@@ -126,9 +156,22 @@ const Projects = () => {
       {/* Project Content */}
       <div className="p-6 space-y-4">
         <div className="space-y-2">
-          <h3 className="text-xl font-bold text-secondary group-hover:text-primary transition-colors duration-200">
-            {project.title}
-          </h3>
+          {project.liveLink ? (
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <h3 className="text-xl font-bold text-secondary hover:text-primary transition-colors duration-200 cursor-pointer">
+                {project.title}
+              </h3>
+            </a>
+          ) : (
+            <h3 className="text-xl font-bold text-secondary group-hover:text-primary transition-colors duration-200">
+              {project.title}
+            </h3>
+          )}
           <p className="text-gray-600 text-sm leading-relaxed">
             {project.description}
           </p>
