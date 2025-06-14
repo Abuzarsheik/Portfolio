@@ -69,13 +69,13 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: "Real Estate Website",
+      title: "Real-Time Chat App",
       description:
-        "A modern real estate website with property listings, search functionality, and contact forms. Features responsive design and smooth animations.",
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "APIs"],
-      githubLink: "https://github.com/yourusername/real-estate",
-      liveLink: "https://real-estate-demo.vercel.app",
-      image: "/images/projects/real-estate.png",
+      "A full-stack real-time chat application with user authentication, WebSocket-based messaging, and responsive UI. Built for scalability and portfolio showcasing.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Socket.IO", "Node.js", "Express", "MongoDB"],
+      githubLink: "https://github.com/Abuzarsheik/chat-app",
+      liveLink: "https://chat-app-frontend-xi-red.vercel.app",
+      image: "/images/projects/chat-app.png",
       fallbackBg: "bg-gradient-to-br from-teal-400 to-blue-500",
     },
     {
