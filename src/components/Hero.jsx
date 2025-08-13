@@ -56,7 +56,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-heading-1 font-bold text-lightest-slate mb-4"
         >
-          Abuzar Sheik.
+          Abuzar Zubair.
         </motion.h1>
 
         {/* Animated subtitle */}
@@ -140,7 +140,7 @@ const Hero = () => {
           <div className="flex flex-col items-center space-y-4">
             {[
               { name: 'GitHub', url: 'https://github.com/Abuzarsheik', icon: 'github' },
-              { name: 'LinkedIn', url: 'https://linkedin.com/in/abuzar-sheik', icon: 'linkedin' },
+              { name: 'LinkedIn', url: 'https://www.linkedin.com/in/abuzar-zubair-444b39238/', icon: 'linkedin' },
               { name: 'Instagram', url: 'https://instagram.com/abuzar.sheik', icon: 'instagram' },
             ].map((social) => (
               <motion.a
@@ -177,13 +177,13 @@ const Hero = () => {
           className="fixed right-6 md:right-12 lg:right-24 xl:right-32 bottom-0 hidden lg:flex flex-col items-center space-y-6"
         >
           <motion.a
-            href="mailto:abuzarsheik123@gmail.com"
+            href="mailto:abuzarzubair15@gmail.com"
             className="text-slate hover:text-green transition-colors duration-200 font-mono text-sm"
             style={{ writingMode: 'vertical-rl' }}
             whileHover={{ y: -3 }}
             transition={{ duration: 0.2 }}
           >
-            abuzarsheik123@gmail.com
+            abuzarzubair15@gmail.com
           </motion.a>
           <div className="w-px h-24 bg-slate"></div>
         </motion.div>

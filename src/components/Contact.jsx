@@ -117,7 +117,7 @@ const Contact = () => {
           {/* Contact Options */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <motion.a
-              href="mailto:abuzarsheik123@gmail.com"
+              href="mailto:abuzarzubair15@gmail.com"
               className="btn-primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -256,14 +256,14 @@ const Contact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a
-              href="mailto:abuzarsheik123@gmail.com"
+              href="mailto:abuzarzubair15@gmail.com"
               className="text-green hover:text-lightest-slate transition-colors duration-200 font-mono text-sm"
             >
-              abuzarsheik123@gmail.com
+              abuzarzubair15@gmail.com
             </a>
             <span className="hidden sm:block text-slate">•</span>
             <a
-              href="https://linkedin.com/in/abuzar-sheik"
+              href="https://www.linkedin.com/in/abuzar-zubair-444b39238/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green hover:text-lightest-slate transition-colors duration-200 font-mono text-sm"
